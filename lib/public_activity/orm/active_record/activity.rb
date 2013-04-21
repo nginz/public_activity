@@ -5,6 +5,7 @@ module PublicActivity
       # details about recorded activity.
       class Activity < ::ActiveRecord::Base
         include Renderable
+        include Readable
 
         # Define polymorphic association to the parent
         belongs_to :trackable, :polymorphic => true
@@ -16,7 +17,7 @@ module PublicActivity
         serialize :parameters, Hash
 
         # should recipient and owner be accessible?
-        attr_accessible :key, :owner, :parameters, :recipient, :trackable
+        attr_accessible :key, :owner, :parameters, :recipient, :trackable, :is_read
       end
     end
   end

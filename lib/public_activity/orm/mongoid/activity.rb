@@ -9,6 +9,7 @@ module PublicActivity
         include ::Mongoid::Document
         include ::Mongoid::Timestamps
         include Renderable
+        include Readable
 
         # Define polymorphic association to the parent
         belongs_to :trackable,  polymorphic: true
@@ -19,6 +20,7 @@ module PublicActivity
 
         field :key,         type: String
         field :parameters,  type: Hash
+        field :is_read,     type: Boolean
       end
     end
   end
