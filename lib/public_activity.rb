@@ -17,6 +17,7 @@ module PublicActivity
   autoload :VERSION
   autoload :Common
   autoload :Renderable
+  autoload :Readable
 
   # Switches PublicActivity on or off.
   # @param value [Boolean]
